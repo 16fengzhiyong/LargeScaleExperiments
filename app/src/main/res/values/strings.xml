@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">LargeScaleExperiments</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">用户名</string>
+    <string name="prompt_password">密码 (optional)</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">这个邮箱的格式不对哦</string>
+    <string name="error_invalid_password">密码太短了，多放几位吧</string>
+    <string name="error_incorrect_password">密码不对哦，再想一想吧</string>
+    <string name="error_field_required">不填可是无法登录的哦</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>

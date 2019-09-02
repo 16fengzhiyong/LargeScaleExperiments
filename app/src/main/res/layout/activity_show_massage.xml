@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ShowMassageActivity">
+    tools:context=".activitys.ShowMassageActivity">
     <!--
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
 
     </LinearLayout>
     -->
-
+    <include layout="@layout/include_toolbar" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +49,16 @@
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温度曲线"
+                android:layout_gravity="center_horizontal"
+                />
             <com.idtk.smallchart.chart.LineChart
                 android:id="@+id/lineChart_temperature"
                 android:layout_width="match_parent"
@@ -60,7 +69,14 @@
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:orientation="vertical"
             android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="光照曲线"
+                />
             <com.idtk.smallchart.chart.LineChart
                 android:id="@+id/lineChart_illumination"
                 android:layout_width="match_parent"
@@ -70,10 +86,12 @@
 
     </LinearLayout>
     <RelativeLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="240dp"
         >
         <TextView
+
             android:id="@+id/text_bt_detailedinformation"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
@@ -82,174 +100,183 @@
             android:textStyle="bold"
             android:textSize="24sp"
             />
-        <RelativeLayout
-            android:id="@+id/rel_tip_1"
-            android:layout_below="@+id/text_bt_detailedinformation"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/text_bt_detailedinformation"
             >
-            <TextView
-                android:id="@+id/tv_tip_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="               体长     :"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodylength"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
-                android:layout_alignBottom="@+id/tv_tip_1"
+            <RelativeLayout
+                android:id="@+id/rel_tip_1"
+                android:layout_marginLeft="80dip"
+                android:layout_marginRight="80dip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/tv_tip_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="               体长     :"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodylength"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
+                    android:layout_alignBottom="@+id/tv_tip_1"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_2"
-                android:layout_below="@+id/tv_tip_1"
-                android:layout_alignRight="@+id/tv_tip_1"
-                android:layout_marginBottom="10px"
-
-
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="体重     :"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodyweight"
-                android:layout_alignBottom="@+id/tv_tip_2"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_2"
+                    android:layout_below="@+id/tv_tip_1"
+                    android:layout_alignRight="@+id/tv_tip_1"
+                    android:layout_marginBottom="10px"
 
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
 
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_3"
-                android:layout_below="@+id/tv_tip_2"
-                android:layout_alignRight="@+id/tv_tip_2"
-                android:layout_marginBottom="10px"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="性别     :"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodysex"
-                android:layout_alignBottom="@+id/tv_tip_3"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_4"
-                android:layout_below="@+id/tv_tip_3"
-                android:layout_alignRight="@+id/tv_tip_3"
-                android:layout_marginBottom="10px"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温度     :"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodytemperature"
-                android:layout_alignBottom="@+id/tv_tip_4"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体重     :"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodyweight"
+                    android:layout_alignBottom="@+id/tv_tip_2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
 
 
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_5"
-                android:layout_below="@+id/tv_tip_4"
-                android:layout_alignRight="@+id/tv_tip_4"
-                android:layout_marginBottom="10px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="光照     :"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodyIllumination"
-                android:layout_alignBottom="@+id/tv_tip_5"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_3"
+                    android:layout_below="@+id/tv_tip_2"
+                    android:layout_alignRight="@+id/tv_tip_2"
+                    android:layout_marginBottom="10px"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_6"
-                android:layout_below="@+id/tv_tip_5"
-                android:layout_alignRight="@+id/tv_tip_5"
-                android:layout_marginBottom="10px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别     :"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodysex"
+                    android:layout_alignBottom="@+id/tv_tip_3"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="疾病备注:"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodyDiseaseRemarks"
-                android:layout_alignBottom="@+id/tv_tip_6"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_4"
+                    android:layout_below="@+id/tv_tip_3"
+                    android:layout_alignRight="@+id/tv_tip_3"
+                    android:layout_marginBottom="10px"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
-            <!--- =============================================== -->
-            <TextView
-                android:id="@+id/tv_tip_7"
-                android:layout_below="@+id/tv_tip_6"
-                android:layout_alignRight="@+id/tv_tip_6"
-                android:layout_marginBottom="10px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="温度     :"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodytemperature"
+                    android:layout_alignBottom="@+id/tv_tip_4"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="特殊备注:"
-                android:textSize="18sp"
-                />
-            <TextView
-                android:id="@+id/message_bodySpecialremarks"
-                android:layout_alignBottom="@+id/tv_tip_7"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="100px"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="18sp"
-                />
-        </RelativeLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+
+
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_5"
+                    android:layout_below="@+id/tv_tip_4"
+                    android:layout_alignRight="@+id/tv_tip_4"
+                    android:layout_marginBottom="10px"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="光照     :"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodyIllumination"
+                    android:layout_alignBottom="@+id/tv_tip_5"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_6"
+                    android:layout_below="@+id/tv_tip_5"
+                    android:layout_alignRight="@+id/tv_tip_5"
+                    android:layout_marginBottom="10px"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="疾病备注:"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodyDiseaseRemarks"
+                    android:layout_alignBottom="@+id/tv_tip_6"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+                <!--- =============================================== -->
+                <TextView
+                    android:id="@+id/tv_tip_7"
+                    android:layout_below="@+id/tv_tip_6"
+                    android:layout_alignRight="@+id/tv_tip_6"
+                    android:layout_marginBottom="10px"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特殊备注:"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/message_bodySpecialremarks"
+                    android:layout_alignBottom="@+id/tv_tip_7"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="200px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="18sp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
     </RelativeLayout>
 
 
